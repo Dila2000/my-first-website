@@ -8,11 +8,18 @@ body{
 }
 
 nav{
-    background:#222;
-    color:white;
+    background:rgba(15,23,42,0.9);
+    backdrop-filter:blur(10px);
+
     display:flex;
     justify-content:space-between;
-    padding:15px 30px;
+    align-items:center;
+
+    padding:15px 40px;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav ul{
@@ -30,20 +37,36 @@ nav ul li a{
 }
 
 .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:150px 20px;
+
     background-image:url('background.jpg');
     background-size:cover;
     background-position:center;
+    background-blend-mode:overlay;
+    background-color:rgba(0,0,0,0.5);
+
     color:white;
+}
 }
 
 button{
+    button{
     padding:12px 25px;
     border:none;
     cursor:pointer;
     border-radius:5px;
     transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px rgba(255,255,255,0.7);
+}
 }
 
 button:hover{
@@ -75,7 +98,13 @@ button:hover{
 }
 
 footer{
-    background:#0f172a;
+    background:#333;
+    background:linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #334155
+    );
     color:white;
     text-align:center;
     padding:20px;
@@ -119,4 +148,94 @@ textarea{
     100%{
         opacity:0.5;
     }
+}
+
+.skills{
+    text-align:center;
+    padding:50px;
+}
+
+.skills .card{
+    display:inline-block;
+    margin:15px;
+}
+
+.dark-mode{
+    background:#111;
+    color:white;
+}
+
+.bar{
+    width:80%;
+    height:20px;
+    background:#ddd;
+    margin:auto;
+    border-radius:20px;
+}
+
+.fill{
+    height:100%;
+    background:#2563eb;
+    border-radius:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin:20px;
+    border-radius:15px;
+
+    transition:0.4s;
+
+    display:inline-block;
+    width:300px;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.cta{
+    text-align:center;
+    padding:80px 20px;
+    background:#0f172a;
+    color:white;
+}
+
+.hero{
+    text-align:center;
+    padding:100px 20px;
+}
+
+@media screen and (max-width: 768px){
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    nav ul{
+    display:flex;
+}
+
+    nav ul li{
+          display:flex;
+    flex-wrap:wrap;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    .card{
+        width:90%;
+        margin:15px auto;
+    }
+
+    .profile-pic{
+        width:150px;
+        height:150px;
+    }
+
 }
